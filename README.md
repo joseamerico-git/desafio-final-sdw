@@ -1,4 +1,5 @@
-# Desafio-final- Santander Dev week 2023.
+# Desafio final Santander Dev week 2023.
+
 
 Idéia: Criar uma RESTful Api Java com Spring Boot, para exercitar os conceitos adquiridos durante as aulas. 
 Observação: Escolher um domínio qualquer.
@@ -9,30 +10,39 @@ Observação: Escolher um domínio qualquer.
 - Spring Boot versão 3.1.4
 - Java 17
 - Packaging: jar
+- Maven dependencies --> Spring Data JPA, Spring Web, PostgreSQL Driver, H2 Database e springdoc-openapi-starter-webmvc-ui.
+- 
 - ssh.exe
+- git e GitHub
 
-
+ 
 
 
 ## Diagrama de Classes
 
-# Sistema Gerênciador de Tarefas.
+# RESTFul Api Gerênciador de Tarefas.
 
 
 ```mermaid
 classDiagram
-Class01 <|-- AveryLongClass : Cool
-Class03 *-- Class04
-Class05 o-- Class06
-Class07 .. Class08
-Class09 --> C2 : Where am i?
-Class09 --* C3
-Class09 --|> Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-Class08 <--> C2: Cool label
+  class Usuario {
+    - String name
+    - String Email
+    - List<Tarefas> tafefas
+  }
+   
+  class Tafefas {
+    - String icon
+    - String description
+    - Boolean Status
+    - Date DtAtribuicao
+    - Date DtFinalizacao
+  }
+  
+  Usuario "1" *-- "N" Tafefas
+ 
 
-``` 
+```
+Um usuário tem uma lista de tarefas, para gerênciar seus projetos ou qualquer tipo de tarefas.
+
+
