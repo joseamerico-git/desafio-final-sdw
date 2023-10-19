@@ -8,9 +8,9 @@ public interface TarefaService {
 
 	Tarefa findById(Long id);
 
-	void create(Tarefa produto);
+	Tarefa create(Tarefa tarefa);
 
-	void update(Long id, Tarefa produto);
+	void update(Long id, Tarefa tarefa);
 
 	void delete(Long id);
 

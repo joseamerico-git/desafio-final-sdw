@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import estudos.doichejunior.controletarefas.model.Usuario;
 import estudos.doichejunior.controletarefas.repository.UsuarioRepository;
 import estudos.doichejunior.controletarefas.service.UserService;
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -27,12 +28,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void create(Usuario userToCreate) {
+    public Usuario create(Usuario userToCreate) {
         if(usuarioRepository.existsById(userToCreate.getId())){
             throw new IllegalArgumentException("This User ID already exists.");
         }
 
-         usuarioRepository.save(userToCreate);
+         return usuarioRepository.save(userToCreate);
     }
 
     @Override
